@@ -1,38 +1,72 @@
 import math
 import sys
+x=0
 
-try:
-    A = int(input("Введите число A: "))
-    if A==0:
-        print("A не может быть 0")
-        sys.exit(1)
-except ValueError:
-    print("")
+while x != 1:
+    try:
+        A = float(input("Введите число A: "))
+        if A==0:
+            print("")
+            print("A не может быть 0!")
+            print("")
+            continue
+        else:
+            print("")
+            break
+            
+    except ValueError:
+        print("")
+        print("Введите цифру!")
+        print("")
+        continue
+    
+print("")
+print("----------------------")
+        
 
-try:
-    B = int(input("Введите число B: "))
-except ValueError:
-    print("")
+while x != 1:
+    try:
+        B = float(input("Введите число B: "))
+        print("")
+        break
+    except ValueError:
+        print("")
+        print("Введите цифру!")
+        print("")
+        continue
 
-try:
-    C = int(input("Введите число C: "))
-except ValueError:
-    print("")
+print("")
+print("----------------------")
 
-try:
-    D = B*B-4*A*C
-except NameError:
-    print("БЫЛИ ВВЕДИНЫ НЕ ПРАВИЛЬНЫЕ СИМВОЛЫ!")
-    sys.exit(1)
+while x != 1:
+    try:
+        C = float(input("Введите число C: "))
+        print("")
+        break
+    except ValueError:
+        print("")
+        print("Введите цифру!")
+        print("")
+        continue
+
+print("")
+print("----------------------")
+
+D = B*B-4*A*C
+
 
 print("D =", D)
 
-if D < 0:
+if D == 0:
+    X = (-B)/(2*A)
+    print("X = ", X)
+    
+elif D < 0:
     print("Корней нет!")
     sys.exit(1)
+
 else:
     X1 = (-B+math.sqrt(D))/(2*A)
     X2 = (-B-math.sqrt(D))/(2*A)
-
-print("X1 =", X1)
-print("X2 =", X2)
+    print("X1 =", X1)
+    print("X2 =", X2)
